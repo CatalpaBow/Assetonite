@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<config>
+	<general med_rate_rec_freq="20" high_rate_rec_freq="20" make_topmost="0"/>
+	<connectivity remote_ip_address="localhost" remote_udp_port0="9996" local_tcp_port0="27150" local_udp_port0="27151"/>
+	<live_telemetry ref_lap_path=".\reference_laps\ref_lap_spa.csv" workspace_path=".\workspaces\acti_workspace.xml"/>
+</config>
+

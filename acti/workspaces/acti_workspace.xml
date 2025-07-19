@@ -1,0 +1,589 @@
+<?xml version="1.0" encoding="us-ascii" standalone="yes"?>
+<workspace width="1124" height="667">
+    <tab name="General">
+        <control type="0" x="0" y="0" width="300" height="85" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Ground Speed" />
+            <channel name="Throttle Pos"></channel>
+            <channel name="Brake Pos"></channel>
+        </control>
+        <control type="0" x="0" y="200" width="300" height="65" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Engine RPM" />
+            <channel name="Clutch Pos" />
+        </control>
+        <control type="0" x="0" y="400" width="300" height="65" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Gear" />
+            <channel name="Steering Angle" />
+        </control>
+        <control type="1" x="300" y="0" width="400" height="200" label_y="[km/h]" min_y="-5" max_y="305" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Ground Speed" colour="orange" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="0" width="400" height="200" label_y="[%]" min_y="-5" max_y="105" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Throttle Pos" colour="green" second_axis="0" />
+            <channel name="Brake Pos" colour="red" second_axis="0"></channel>
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[rpm]" min_y="0" max_y="9000" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Engine RPM" colour="red" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[%]" min_y="-5" max_y="105" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Clutch Pos" colour="yellow" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="400" width="400" height="200" label_y="[]" min_y="0" max_y="8" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Gear" colour="blue" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="400" width="400" height="200" label_y="[deg]" min_y="-300" max_y="300" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Steering Angle" colour="pink" second_axis="0" />
+        </control>
+    </tab>
+    <tab name="Engine">
+        <control type="0" x="0" y="0" width="300" height="122" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Engine RPM" />
+            <channel name="Max RPM" />
+            <channel name="Turbo Boost" />
+            <channel name="Max Turbo Boost" />
+            <channel name="Engine Limiter"></channel>
+        </control>
+        <control type="0" x="0" y="200" width="300" height="142" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Fuel Level" />
+            <channel name="Max Fuel" />
+            <channel name="KERS Charge" />
+            <channel name="KERS Input" />
+            <channel name="Max Torque" />
+            <channel name="Max Power" />
+        </control>
+        <control type="0" x="0" y="400" width="300" height="179" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Engine Brake Setting" />
+            <channel name="ERS Recovery Level" />
+            <channel name="ERS Power Level" />
+            <channel name="ERS Heat Charging" />
+            <channel name="ERS Is Charging" />
+            <channel name="KERS Max Energy" />
+            <channel name="ERS Max Energy" />
+            <channel name="KERS Deployed Energy" />
+        </control>
+        <control type="1" x="300" y="0" width="400" height="200" label_y="[rpm]" min_y="0" max_y="9000" second_axis="1" label_y2="[]" min_y2="-0.1" max_y2="4.1">
+            <channel name="Engine RPM" colour="red" second_axis="0" />
+            <channel name="Max RPM" colour="purple" second_axis="0" />
+            <channel name="Turbo Boost" colour="cyan" second_axis="1" />
+            <channel name="Max Turbo Boost" colour="blue" second_axis="1" />
+        </control>
+        <control type="1" x="700" y="0" width="400" height="200" label_y="[]" min_y="-0.1" max_y="1.1" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Engine Limiter" colour="cyan" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[l]" min_y="-1" max_y="121" second_axis="1" label_y2="[%]" min_y2="-1" max_y2="121">
+            <channel name="Fuel Level" colour="yellow" second_axis="0" />
+            <channel name="Max Fuel" colour="purple" second_axis="0" />
+            <channel name="KERS Charge" colour="blue" second_axis="1" />
+            <channel name="KERS Input" colour="red" second_axis="1" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[Nm]" min_y="100" max_y="1000" second_axis="1" label_y2="[hp]" min_y2="100" max_y2="1000">
+            <channel name="Max Torque" colour="blue" second_axis="0" />
+            <channel name="Max Power" colour="red" second_axis="1" />
+        </control>
+        <control type="1" x="300" y="400" width="400" height="200" label_y="[]" min_y="-0.1" max_y="11" second_axis="1" label_y2="[]" min_y2="-0.1" max_y2="1.1">
+            <channel name="ERS Recovery Level" colour="pink" second_axis="0" />
+            <channel name="ERS Power Level" colour="cyan" second_axis="0" />
+            <channel name="ERS Is Charging" colour="blue" second_axis="1" />
+        </control>
+        <control type="1" x="700" y="400" width="400" height="200" label_y="[MJ]" min_y="100" max_y="50000" second_axis="1" label_y2="[kJ]" min_y2="0" max_y2="5000">
+            <channel name="KERS Max Energy" colour="blue" second_axis="0" />
+            <channel name="ERS Max Energy" colour="orange" second_axis="0" />
+            <channel name="KERS Deployed Energy" colour="red" second_axis="1" />
+        </control>
+    </tab>
+    <tab name="Elec">
+        <control type="0" x="0" y="0" width="300" height="104" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="ABS Enabled" />
+            <channel name="ABS Active"></channel>
+            <channel name="DRS Available" />
+            <channel name="DRS Active" />
+        </control>
+        <control type="0" x="0" y="200" width="300" height="238" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="TC Enabled" />
+            <channel name="TC Active" />
+            <channel name="AID Auto Shift" />
+            <channel name="AID Ideal Line" />
+            <channel name="AID Fuel Rate" />
+            <channel name="AID Tire Wear Rate" />
+            <channel name="AID Mech Damage" />
+            <channel name="AID Allow Tire Blankets" />
+            <channel name="AID Stability" />
+            <channel name="AID Auto Clutch" />
+            <channel name="AID Auto Blip" />
+        </control>
+        <control type="1" x="300" y="0" width="400" height="200" label_y="[]" min_y="-0.1" max_y="1.1" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="ABS Enabled" colour="purple" second_axis="0" />
+            <channel name="ABS Active" colour="pink" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="0" width="400" height="200" label_y="[]" min_y="-0.1" max_y="1.1" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="DRS Available" colour="blue" second_axis="0" />
+            <channel name="DRS Active" colour="red" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[]" min_y="-0.1" max_y="1.1" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="TC Enabled" colour="green" second_axis="0" />
+            <channel name="TC Active" colour="cyan" second_axis="0" />
+        </control>
+    </tab>
+    <tab name="Chassis">
+        <control type="0" x="0" y="0" width="300" height="102" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="CG Accel Lateral" />
+            <channel name="CG Accel Longitudinal"></channel>
+            <channel name="CG Accel Vertical"></channel>
+            <channel name="Ballast"></channel>
+        </control>
+        <control type="0" x="0" y="200" width="300" height="85" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Chassis Velocity X" />
+            <channel name="Chassis Velocity Y" />
+            <channel name="Chassis Velocity Z" />
+        </control>
+        <control type="0" x="0" y="400" width="300" height="125" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Chassis Pitch Angle" />
+            <channel name="Chassis Roll Angle" />
+            <channel name="Chassis Pitch Rate" />
+            <channel name="Chassis Roll Rate" />
+            <channel name="Chassis Yaw Rate" />
+        </control>
+        <control type="2" x="300" y="0" width="400" height="400" colour="purple" min_x="-3" max_x="3" min_y="-3" max_y="3">
+            <channel name="CG Accel Lateral" />
+            <channel name="CG Accel Longitudinal" />
+        </control>
+        <control type="1" x="700" y="0" width="400" height="200" label_y="[G]" min_y="-2" max_y="2" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="CG Accel Vertical" colour="green" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[m/s]" min_y="-55" max_y="95" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Chassis Velocity X" colour="red" second_axis="0" />
+            <channel name="Chassis Velocity Y" colour="blue" second_axis="0" />
+            <channel name="Chassis Velocity Z" colour="green" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="400" width="400" height="200" label_y="[deg]" min_y="-5" max_y="5" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Chassis Pitch Angle" colour="red" second_axis="0" />
+            <channel name="Chassis Roll Angle" colour="blue" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="400" width="400" height="200" label_y="[deg/s]" min_y="-50" max_y="50" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Chassis Pitch Rate" colour="red" second_axis="0" />
+            <channel name="Chassis Roll Rate" colour="blue" second_axis="0" />
+            <channel name="Chassis Yaw Rate" colour="green" second_axis="0" />
+        </control>
+    </tab>
+    <tab name="Damage">
+        <control type="0" x="200" y="0" width="300" height="45" name_col_w="150" value_col_w="94" units_col_w="51">
+            <channel name="Car Damage Front" />
+        </control>
+        <control type="0" x="0" y="200" width="300" height="65" name_col_w="150" value_col_w="94" units_col_w="51">
+            <channel name="Car Damage Left" />
+            <channel name="Car Damage Right" />
+        </control>
+        <control type="0" x="200" y="400" width="300" height="45" name_col_w="150" value_col_w="94" units_col_w="51">
+            <channel name="Car Damage Rear" />
+        </control>
+        <control type="1" x="500" y="0" width="400" height="200" label_y="[]" min_y="-1" max_y="91" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Car Damage Front" colour="red" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[]" min_y="-1" max_y="91" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Car Damage Left" colour="pink" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[]" min_y="-1" max_y="91" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Car Damage Right" colour="cyan" second_axis="0" />
+        </control>
+        <control type="1" x="500" y="400" width="400" height="200" label_y="[]" min_y="-1" max_y="91" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Car Damage Rear" colour="blue" second_axis="0" />
+        </control>
+    </tab>
+    <tab name="Sus Travel/Height">
+        <control type="0" x="0" y="0" width="300" height="145" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Suspension Travel FL" />
+            <channel name="Max Sus Travel FL" />
+            <channel name="Ride Height FL" />
+            <channel name="Suspension Travel FR" />
+            <channel name="Max Sus Travel FR" />
+            <channel name="Ride Height FR" />
+        </control>
+        <control type="0" x="0" y="200" width="300" height="145" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Suspension Travel RL" />
+            <channel name="Max Sus Travel RL" />
+            <channel name="Ride Height RL" />
+            <channel name="Suspension Travel RR" />
+            <channel name="Max Sus Travel RR" />
+            <channel name="Ride Height RR" />
+        </control>
+        <control type="0" x="200" y="400" width="300" height="45" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="CG Height" />
+        </control>
+        <control type="1" x="300" y="0" width="400" height="200" label_y="[mm]" min_y="-5" max_y="155" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Suspension Travel FL" colour="pink" second_axis="0" />
+            <channel name="Max Sus Travel FL" colour="purple" second_axis="0" />
+            <channel name="Ride Height FL" colour="green" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="0" width="400" height="200" label_y="[mm]" min_y="-5" max_y="155" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Suspension Travel FR" colour="red" second_axis="0" />
+            <channel name="Max Sus Travel FR" colour="purple" second_axis="0" />
+            <channel name="Ride Height FR" colour="green" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[mm]" min_y="-5" max_y="155" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Suspension Travel RL" colour="cyan" second_axis="0" />
+            <channel name="Max Sus Travel RL" colour="purple" second_axis="0" />
+            <channel name="Ride Height RL" colour="green" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[mm]" min_y="-5" max_y="155" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Suspension Travel RR" colour="blue" second_axis="0" />
+            <channel name="Max Sus Travel RR" colour="purple" second_axis="0" />
+            <channel name="Ride Height RR" colour="green" second_axis="0" />
+        </control>
+        <control type="1" x="500" y="400" width="400" height="200" label_y="[mm]" min_y="200" max_y="500" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="CG Height" colour="orange" second_axis="0" />
+        </control>
+    </tab>
+    <tab name="Sus Align">
+        <control type="0" x="0" y="0" width="300" height="65" name_col_w="151" value_col_w="94" units_col_w="50">
+            <channel name="Caster FL" />
+            <channel name="Caster FR" />
+        </control>
+        <control type="0" x="0" y="200" width="300" height="105" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Camber FL" />
+            <channel name="Toe In FL" />
+            <channel name="Camber FR" />
+            <channel name="Toe In FR" />
+        </control>
+        <control type="0" x="0" y="400" width="300" height="105" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Camber RL" />
+            <channel name="Toe In RL" />
+            <channel name="Camber RR" />
+            <channel name="Toe In RR" />
+        </control>
+        <control type="1" x="300" y="0" width="400" height="200" label_y="[deg]" min_y="-10" max_y="10" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Caster FL" colour="pink" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="0" width="400" height="200" label_y="[deg]" min_y="-10" max_y="10" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Caster FR" colour="red" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[deg]" min_y="-5" max_y="5" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Camber FL" colour="pink" second_axis="0" />
+            <channel name="Toe In FL" colour="purple" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[deg]" min_y="-5" max_y="5" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Camber FR" colour="red" second_axis="0" />
+            <channel name="Toe In FR" colour="purple" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="400" width="400" height="200" label_y="[deg]" min_y="-5" max_y="5" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Camber RL" colour="cyan" second_axis="0" />
+            <channel name="Toe In RL" colour="purple" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="400" width="400" height="200" label_y="[deg]" min_y="-5" max_y="5" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Camber RR" colour="blue" second_axis="0" />
+            <channel name="Toe In RR" colour="purple" second_axis="0" />
+        </control>
+    </tab>
+    <tab name="Brakes">
+        <control type="0" x="0" y="0" width="300" height="65" name_col_w="150" value_col_w="94" units_col_w="51">
+            <channel name="Brake Temp FL" />
+            <channel name="Brake Temp FR" />
+        </control>
+        <control type="0" x="0" y="200" width="300" height="65" name_col_w="150" value_col_w="94" units_col_w="51">
+            <channel name="Brake Temp RL" />
+            <channel name="Brake Temp RR" />
+        </control>
+        <control type="0" x="200" y="400" width="300" height="45" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Brake Bias" />
+        </control>
+        <control type="1" x="300" y="0" width="400" height="200" label_y="[C]" min_y="20" max_y="700" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Brake Temp FL" colour="pink" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="0" width="400" height="200" label_y="[C]" min_y="20" max_y="700" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Brake Temp FR" colour="red" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[C]" min_y="20" max_y="700" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Brake Temp RL" colour="cyan" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[C]" min_y="20" max_y="700" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Brake Temp RR" colour="blue" second_axis="0" />
+        </control>
+        <control type="1" x="500" y="400" width="400" height="200" label_y="[%]" min_y="0" max_y="100" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Brake Bias" colour="blue" second_axis="0" />
+        </control>
+    </tab>
+    <tab name="Tire Temp">
+        <control type="0" x="0" y="0" width="300" height="179" name_col_w="150" value_col_w="94" units_col_w="51">
+            <channel name="Tire Temp Inner FL" />
+            <channel name="Tire Temp Middle FL" />
+            <channel name="Tire Temp Outer FL" />
+            <channel name="Tire Temp Core FL" />
+            <channel name="Tire Temp Inner FR" />
+            <channel name="Tire Temp Middle FR" />
+            <channel name="Tire Temp Outer FR" />
+            <channel name="Tire Temp Core FR" />
+        </control>
+        <control type="0" x="0" y="200" width="300" height="179" name_col_w="150" value_col_w="94" units_col_w="51">
+            <channel name="Tire Temp Inner RL" />
+            <channel name="Tire Temp Middle RL" />
+            <channel name="Tire Temp Outer RL" />
+            <channel name="Tire Temp Core RL" />
+            <channel name="Tire Temp Inner RR" />
+            <channel name="Tire Temp Middle RR" />
+            <channel name="Tire Temp Outer RR" />
+            <channel name="Tire Temp Core RR" />
+        </control>
+        <control type="1" x="300" y="0" width="400" height="200" label_y="[C]" min_y="20" max_y="140" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Temp Inner FL" colour="red" second_axis="0" />
+            <channel name="Tire Temp Middle FL" colour="orange" second_axis="0" />
+            <channel name="Tire Temp Outer FL" colour="blue" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="0" width="400" height="200" label_y="[C]" min_y="20" max_y="140" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Temp Inner FR" colour="red" second_axis="0" />
+            <channel name="Tire Temp Middle FR" colour="orange" second_axis="0" />
+            <channel name="Tire Temp Outer FR" colour="blue" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[C]" min_y="20" max_y="140" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Temp Inner RL" colour="red" second_axis="0" />
+            <channel name="Tire Temp Middle RL" colour="orange" second_axis="0" />
+            <channel name="Tire Temp Outer RL" colour="blue" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[C]" min_y="20" max_y="140" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Temp Inner RR" colour="red" second_axis="0" />
+            <channel name="Tire Temp Middle RR" colour="orange" second_axis="0" />
+            <channel name="Tire Temp Outer RR" colour="blue" second_axis="0" />
+        </control>
+    </tab>
+    <tab name="Tire Press">
+        <control type="0" x="0" y="0" width="300" height="65" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Tire Pressure FL" />
+            <channel name="Tire Pressure FR" />
+        </control>
+        <control type="0" x="0" y="200" width="300" height="65" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Tire Pressure RL" />
+            <channel name="Tire Pressure RR" />
+        </control>
+        <control type="1" x="300" y="0" width="400" height="200" label_y="[psi]" min_y="0" max_y="50" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Pressure FL" colour="pink" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="0" width="400" height="200" label_y="[psi]" min_y="0" max_y="50" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Pressure FR" colour="red" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[psi]" min_y="0" max_y="50" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Pressure RL" colour="cyan" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[psi]" min_y="0" max_y="50" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Pressure RR" colour="blue" second_axis="0" />
+        </control>
+    </tab>
+    <tab name="Tire Grip">
+        <control type="0" x="0" y="0" width="300" height="65" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Tire Rubber Grip FL" />
+            <channel name="Tire Rubber Grip FR" />
+        </control>
+        <control type="0" x="0" y="200" width="300" height="65" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Tire Rubber Grip RL" />
+            <channel name="Tire Rubber Grip RR" />
+        </control>
+        <control type="1" x="300" y="0" width="400" height="200" label_y="[%]" min_y="45" max_y="105" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Rubber Grip FL" colour="pink" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="0" width="400" height="200" label_y="[%]" min_y="45" max_y="105" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Rubber Grip FR" colour="red" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[%]" min_y="45" max_y="105" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Rubber Grip RL" colour="cyan" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[%]" min_y="45" max_y="105" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Rubber Grip RR" colour="blue" second_axis="0" />
+        </control>
+    </tab>
+    <tab name="Tire Slip Ang">
+        <control type="0" x="0" y="0" width="300" height="65" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Tire Slip Angle FL" />
+            <channel name="Tire Slip Angle FR" />
+        </control>
+        <control type="0" x="0" y="200" width="300" height="65" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Tire Slip Angle RL" />
+            <channel name="Tire Slip Angle RR" />
+        </control>
+        <control type="1" x="300" y="0" width="400" height="200" label_y="[deg]" min_y="-45" max_y="45" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Slip Angle FL" colour="pink" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="0" width="400" height="200" label_y="[deg]" min_y="-45" max_y="45" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Slip Angle FR" colour="red" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[deg]" min_y="-45" max_y="45" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Slip Angle RL" colour="cyan" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[deg]" min_y="-45" max_y="45" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Slip Angle RR" colour="blue" second_axis="0" />
+        </control>
+    </tab>
+    <tab name="Tire Slip Rat">
+        <control type="0" x="0" y="0" width="300" height="65" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Tire Slip Ratio FL" />
+            <channel name="Tire Slip Ratio FR" />
+        </control>
+        <control type="0" x="0" y="200" width="300" height="65" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Tire Slip Ratio RL" />
+            <channel name="Tire Slip Ratio RR" />
+        </control>
+        <control type="1" x="300" y="0" width="400" height="200" label_y="[%]" min_y="-100" max_y="100" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Slip Ratio FL" colour="pink" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="0" width="400" height="200" label_y="[%]" min_y="-100" max_y="100" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Slip Ratio FR" colour="red" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[%]" min_y="-100" max_y="100" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Slip Ratio RL" colour="cyan" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[%]" min_y="-100" max_y="100" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Slip Ratio RR" colour="blue" second_axis="0" />
+        </control>
+    </tab>
+    <tab name="Tire Spd/Trq">
+        <control type="0" x="0" y="0" width="300" height="105" name_col_w="151" value_col_w="94" units_col_w="50">
+            <channel name="Wheel Angular Speed FL" />
+            <channel name="Self Align Torque FL" />
+            <channel name="Wheel Angular Speed FR" />
+            <channel name="Self Align Torque FR" />
+        </control>
+        <control type="0" x="0" y="200" width="300" height="105" name_col_w="151" value_col_w="94" units_col_w="50">
+            <channel name="Wheel Angular Speed RL" />
+            <channel name="Self Align Torque RL" />
+            <channel name="Wheel Angular Speed RR" />
+            <channel name="Self Align Torque RR" />
+        </control>
+        <control type="0" x="200" y="400" width="300" height="65" name_col_w="151" value_col_w="94" units_col_w="50">
+            <channel name="Ground Speed" />
+            <channel name="Drive Train Speed" />
+        </control>
+        <control type="1" x="300" y="0" width="400" height="200" label_y="[rad/s]" min_y="-5" max_y="250" second_axis="1" label_y2="Nm" min_y2="-1000" max_y2="400">
+            <channel name="Wheel Angular Speed FL" colour="pink" second_axis="0" />
+            <channel name="Self Align Torque FL" colour="purple" second_axis="1" />
+        </control>
+        <control type="1" x="700" y="0" width="400" height="200" label_y="[rad/s]" min_y="-5" max_y="250" second_axis="1" label_y2="Nm" min_y2="-400" max_y2="1000">
+            <channel name="Wheel Angular Speed FR" colour="red" second_axis="0" />
+            <channel name="Self Align Torque FR" colour="purple" second_axis="1" />
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[rad/s]" min_y="-5" max_y="250" second_axis="1" label_y2="Nm" min_y2="-1000" max_y2="400">
+            <channel name="Wheel Angular Speed RL" colour="cyan" second_axis="0" />
+            <channel name="Self Align Torque RL" colour="purple" second_axis="1" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[rad/s]" min_y="-5" max_y="250" second_axis="1" label_y2="Nm" min_y2="-400" max_y2="1000">
+            <channel name="Wheel Angular Speed RR" colour="blue" second_axis="0" />
+            <channel name="Self Align Torque RR" colour="purple" second_axis="1" />
+        </control>
+        <control type="1" x="500" y="400" width="400" height="200" label_y="[km/h]" min_y="-5" max_y="305" second_axis="1" label_y2="[rad/s]" min_y2="-5" max_y2="250">
+            <channel name="Ground Speed" colour="orange" second_axis="0" />
+            <channel name="Drive Train Speed" colour="pink" second_axis="1" />
+        </control>
+    </tab>
+    <tab name="Tire Load">
+        <control type="0" x="0" y="0" width="300" height="65" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Tire Load FL" />
+            <channel name="Tire Load FR" />
+        </control>
+        <control type="0" x="0" y="200" width="300" height="65" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Tire Load RL" />
+            <channel name="Tire Load RR" />
+        </control>
+        <control type="1" x="300" y="0" width="400" height="200" label_y="[N]" min_y="0" max_y="15000" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Load FL" colour="pink" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="0" width="400" height="200" label_y="[N]" min_y="0" max_y="15000" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Load FR" colour="red" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[N]" min_y="0" max_y="15000" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Load RL" colour="cyan" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[N]" min_y="0" max_y="15000" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Load RR" colour="blue" second_axis="0" />
+        </control>
+    </tab>
+    <tab name="Tire Radii">
+        <control type="0" x="0" y="0" width="300" height="105" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Tire Radius FL" />
+            <channel name="Tire Loaded Radius FL" />
+            <channel name="Tire Radius FR" />
+            <channel name="Tire Loaded Radius FR" />
+        </control>
+        <control type="0" x="0" y="200" width="300" height="105" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Tire Radius RL" />
+            <channel name="Tire Loaded Radius RL" />
+            <channel name="Tire Radius RR" />
+            <channel name="Tire Loaded Radius RR" />
+        </control>
+        <control type="1" x="300" y="0" width="400" height="200" label_y="[mm]" min_y="200" max_y="500" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Radius FL" colour="green" second_axis="0" />
+            <channel name="Tire Loaded Radius FL" colour="pink" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="0" width="400" height="200" label_y="[mm]" min_y="200" max_y="500" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Radius FR" colour="green" second_axis="0" />
+            <channel name="Tire Loaded Radius FR" colour="red" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[mm]" min_y="200" max_y="500" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Radius RL" colour="green" second_axis="0" />
+            <channel name="Tire Loaded Radius RL" colour="cyan" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[mm]" min_y="200" max_y="500" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Radius RR" colour="green" second_axis="0" />
+            <channel name="Tire Loaded Radius RR" colour="blue" second_axis="0" />
+        </control>
+    </tab>
+    <tab name="Tire Dirt">
+        <control type="0" x="0" y="0" width="300" height="65" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Tire Dirt Level FL" />
+            <channel name="Tire Dirt Level FR" />
+        </control>
+        <control type="0" x="0" y="200" width="300" height="65" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Tire Dirt Level RL" />
+            <channel name="Tire Dirt Level RR" />
+        </control>
+        <control type="1" x="300" y="0" width="400" height="200" label_y="[]" min_y="-0.1" max_y="5.1" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Dirt Level FL" colour="pink" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="0" width="400" height="200" label_y="[]" min_y="-0.1" max_y="5.1" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Dirt Level FR" colour="red" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[]" min_y="-0.1" max_y="5.1" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Dirt Level RL" colour="cyan" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[]" min_y="-0.1" max_y="5.1" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Tire Dirt Level RR" colour="blue" second_axis="0" />
+        </control>
+    </tab>
+    <tab name="Circuit">
+        <control type="0" x="100" y="0" width="300" height="258" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Car Coord X" />
+            <channel name="Car Coord Y"></channel>
+            <channel name="Car Coord Z"></channel>
+            <channel name="Car Pos Norm"></channel>
+            <channel name="Num Tires Off Track"></channel>
+            <channel name="Penalties Enabled"></channel>
+            <channel name="Air Density"></channel>
+            <channel name="Air Temp"></channel>
+            <channel name="Road Temp"></channel>
+            <channel name="Surface Grip"></channel>
+            <channel name="Wind Speed"></channel>
+            <channel name="Wind Direction"></channel>
+        </control>
+        <control type="1" x="0" y="400" width="400" height="200" label_y="[m]" min_y="-50" max_y="50" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Car Coord Z" colour="green" second_axis="0" />
+        </control>
+        <control type="3" x="400" y="0" width="600" height="600">
+            <channel name="Car Coord X" />
+            <channel name="Car Coord Y" />
+        </control>
+    </tab>
+    <tab name="Timing/DAQ">
+        <control type="0" x="0" y="0" width="300" height="48" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Best Lap Delta"></channel>
+        </control>
+        <control type="0" x="0" y="200" width="300" height="105" name_col_w="150" value_col_w="95" units_col_w="50">
+            <channel name="Raw Data Sample Rate" />
+            <channel name="LR Sample Clock" />
+            <channel name="Lap Time"></channel>
+            <channel name="Lap Time2"></channel>
+        </control>
+        <control type="1" x="300" y="0" width="400" height="200" label_y="[s]" min_y="-1" max_y="1" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Best Lap Delta" colour="blue" second_axis="0" />
+        </control>
+        <control type="1" x="300" y="200" width="400" height="200" label_y="[Hz]" min_y="10" max_y="150" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="Raw Data Sample Rate" colour="orange" second_axis="0" />
+        </control>
+        <control type="1" x="700" y="200" width="400" height="200" label_y="[]" min_y="-0.1" max_y="1.1" second_axis="0" label_y2="" min_y2="" max_y2="">
+            <channel name="LR Sample Clock" colour="purple" second_axis="0" />
+        </control>
+    </tab>
+</workspace>
+
