@@ -2,9 +2,4 @@
 >>> INFO    : Starting ACTI with loglevel = 3.
 >>> INFO    : Initializing...
 >>> INFO    : Initialization complete.
->>> INFO    : Attempting to connect...
->>> INFO    : PHASE2 response length = 328 bytes.
->>> INFO    : Connection established.
->>> ERROR   : ERROR: Dataflow synchronization has timed out.
->>> INFO    : Connection terminated.
 >>> INFO    : Closing ACTI.
