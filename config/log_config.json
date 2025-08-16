@@ -1,0 +1,52 @@
+{
+    "version": 1,
+    "disable_existing_loggers": false,
+    "formatters": {
+        "simple": {
+            "format": "%(asctime)s %(module)s %(funcName)s %(lineno)s [%(levelname)s]: %(message)s"
+        },
+        "color": {
+            "()": "utils.color_formatter.ColorFormatter", 
+            "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s (%(filename)s:%(lineno)d)"
+        }
+    },
+
+    "handlers": {
+        "consoleHandler": {
+            "class": "logging.StreamHandler",
+            "level": "INFO",
+            "formatter": "color",
+            "stream": "ext://sys.stdout"
+        },
+        "fileHandler": {
+            "class": "logging.FileHandler",
+            "level": "INFO",
+            "formatter": "simple",
+            "filename": "to be replaced"
+        },        
+        "fixFbxHandler": {
+            "class": "logging.FileHandler",
+            "level": "DEBUG",
+            "formatter": "simple",
+            "filename": "logs\\fixFbx.log"
+        }
+    },
+
+    "loggers": {
+        "def": {
+            "level": "DEBUG",
+            "handlers": ["consoleHandler"],
+            "propagate": false
+        } ,
+        "fix_fbx": {
+            "level": "DEBUG",
+            "handlers": ["consoleHandler","fixFbxHandler"],
+            "propagate": false
+        }
+    },
+
+
+    "root": {
+        "level": "INFO"
+    }
+}
