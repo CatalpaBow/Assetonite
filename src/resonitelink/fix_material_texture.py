@@ -112,8 +112,7 @@ async def test():
         await reso_link.get_slot_by_slot(slot=slot,depth=0,includeComponentData=True)
         for slot in slots_material
     ]
-
-    #スロット名から'Material: 'を消し、マテリアル名だけにする
+    #Remove 'Material: ' from the slot name, leaving only the material name.
     materials = {
         slot.name.value.removeprefix("Material: "): next(
             (
@@ -127,10 +126,6 @@ async def test():
         for slot in slots_material_new
     }
     
-    
-
-
-
 def find_component_by_type(components:Iterable[Component],type:str) -> Component | None:
     for component in components:
         if component.componentType == "[FrooxEngine]FrooxEngine.PBS_Metallic":
