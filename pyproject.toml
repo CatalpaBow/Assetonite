@@ -1,6 +1,6 @@
 [build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+requires = ["uv_build >= 0.10.0, <0.11.0"]
+build-backend = "uv_build"
 
 [project]
 name = "assetonite"
@@ -12,7 +12,6 @@ authors = [
 readme = "README.md"
 requires-python = ">=3.13, <3.14"
 dependencies = [
-    "assetonite @ git+https://github.com/CatalpaBow/Assetonite.git@5b71317e4d59d5a025cfd36338338dda3e6f9b4b#egg=assetonite",
     "colorama==0.4.6",
     "contourpy==1.3.2",
     "cycler==0.12.1",
@@ -58,11 +57,8 @@ dependencies = [
     "typing_extensions==4.14.1",
     "uc-micro-py==1.0.3",
     "websockets==16.0",
-    "fbx @ file://./paks/fbx",
 ]
 
-[tool.setuptools.packages.find]
-where = ["paks/fbx"]
-
-[tool.setuptools.package-data]
-myext = ["*.pyd"]
+[tool.uv.build-backend]
+module-name = "src"
+module-root = ""
