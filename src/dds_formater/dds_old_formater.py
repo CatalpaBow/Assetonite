@@ -2,7 +2,7 @@ import subprocess
 from pathlib import Path
 from dataclasses import dataclass
 import shutil
-temp_texsutre_fldr_path = r'F:\Games\OtherGames\Assetto Corsa\content\cars\ke_subaru_impreza_wrx_25bat\fbx\texture'
+
 dxgi_formats_old = [
     "R32G32B32A32_TYPELESS",
     "R32G32B32_TYPELESS",
@@ -78,6 +78,13 @@ def to_old_format(file_path : Path ):
 def is_r8g8(path :Path):
     format = check_format(path)
     return 'R8G8_' in format
+
+def is_r8(path :Path):
+    format = check_format(path)
+    return 'R8_' in format
+
+
+temp_texsutre_fldr_path = r'F:\Games\OtherGames\Assetto Corsa\content\cars\ke_subaru_impreza_wrx_25bat\fbx\texture'
 
 def test():
     #test_path = '.tools/symbols.dds'

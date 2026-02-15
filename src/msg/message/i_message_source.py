@@ -5,6 +5,42 @@ from msg.message.analog_instrument_angle_calculator import AnalogInstrumentConst
 from msg.message.tyre_rotation_calculator import TyreRotationInput,TyreRotationConstant
 
 @dataclass
+class Transform:
+    position : tuple[float] # f3
+    rotation : tuple[float] # q
+
+@dataclass
+class Transforms:
+    body : Transform
+    wheel_lf : Transform
+    wheel_rf : Transform
+    wheel_lr : Transform
+    wheel_rr : Transform
+
+@dataclass
+class AnalogInstrumentAngles:
+    rpm : float
+    speed : float
+    fuel : float
+    turbo : float 
+    water : float
+
+@dataclass
+class Animations:
+    analog_instrument_angles : AnalogInstrumentAngles
+    steer : float
+    
+@dataclass
+class Car:
+    id : int
+    transforms : Transforms
+    animation : Animations
+
+@dataclass
+class AICar:
+    transform : Transforms
+
+@dataclass
 class ConstantData:
     analog_instrument_constant : Iterator[AnalogInstrumentConstant]
     tyre_constant : TyreRotationConstant

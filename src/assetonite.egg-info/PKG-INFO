@@ -1,0 +1,63 @@
+Metadata-Version: 2.4
+Name: assetonite
+Version: 0.1.0
+Summary: Play assettocorsa in resonite
+Author: CatalpaBow
+Requires-Python: >=3.11.4
+Description-Content-Type: text/markdown
+License-File: LICENSE
+Requires-Dist: colorama==0.4.6
+Requires-Dist: contourpy==1.3.2
+Requires-Dist: cycler==0.12.1
+Requires-Dist: fonttools==4.58.5
+Requires-Dist: iniconfig==2.1.0
+Requires-Dist: kiwisolver==1.4.8
+Requires-Dist: markdown-it-py==3.0.0
+Requires-Dist: matplotlib==3.10.3
+Requires-Dist: mdurl==0.1.2
+Requires-Dist: numpy==2.3.1
+Requires-Dist: numpy-quaternion==2024.0.10
+Requires-Dist: packaging==25.0
+Requires-Dist: pillow==11.3.0
+Requires-Dist: pluggy==1.6.0
+Requires-Dist: ply==3.11
+Requires-Dist: Pygments==2.19.2
+Requires-Dist: pyparsing==3.2.3
+Requires-Dist: PyQt5==5.15.11
+Requires-Dist: PyQt5-Qt5==5.15.2
+Requires-Dist: PyQt5_sip==12.17.0
+Requires-Dist: PyQt6==6.9.1
+Requires-Dist: PyQt6-Qt6==6.9.1
+Requires-Dist: PyQt6_sip==13.10.2
+Requires-Dist: pyqtgraph==0.13.7
+Requires-Dist: pytest==8.4.1
+Requires-Dist: pytest-asyncio==1.1.0
+Requires-Dist: python-dateutil==2.9.0.post0
+Requires-Dist: python-osc==1.9.3
+Requires-Dist: qasync==0.27.1
+Requires-Dist: reactivex==4.0.4
+Requires-Dist: rich==14.1.0
+Requires-Dist: scipy==1.16.0
+Requires-Dist: sip==6.6.2
+Requires-Dist: six==1.17.0
+Requires-Dist: toml==0.10.2
+Requires-Dist: typing_extensions==4.14.1
+Requires-Dist: websockets==15.0.1
+Dynamic: license-file
+
+AssettoCorsaをResoniteでプレイ WIP
+
+### 構造
+ReactivePrograming + Layered Architectureもどき
+
+依存関係
+Sender:メッセージをシリアライズし、送信する
+↑
+Message:メッセージソースを元にメッセージを生成する
+↑
+MessageSource:RawDataからメッセージの生成に必要なデータを生成し、提供
+↑
+RawData:iniやSharedMemoryといった生のデータを取ってくる
+
+message_server:メッセージングの一連のプロセスをReactiveProgramingで記述
+ 

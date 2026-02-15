@@ -1,0 +1,43 @@
+Resoniteで使用されるマテリアルの調査結果
+PBS Metaric
+パラメーター
+AlbedoTexture
+AlbedoColor(RGBA)
+EmissiveColor(RGBA)
+EmissiveMap
+NormalMap
+HeightMap
+HeightScale
+OcclusionMap
+DetailAlbedoTexture
+DetailNormalMap
+DetailNormalScale
+BlenmdMode
+AlphaCutoff
+OffsetFactor
+OffsetUnits
+RenderQueue
+Metalic(float0-1)
+Smoothness(float0-1)
+MetgaricMap
+
+使用法
+法線マップ:GLNormalsでエンコード
+MetallicMap:
+R(Red Channel): Metallic
+The Red Channel determines how metallic a material is.
+Metals are usually 1 in this channel and non-metals (also known as dielectrics) are 0
+When choosing Metallic values, do remember that items in the real world aren't perfect. Imperfections and randomness is good! A common misconception is that pixels within a metallic map must be pure 0 or 1 values, however this is not the case. If you were able to zoom in far enough into a material you could observe pure metal and pure non-metal parts (rust would be metal with a separate layer of oxidized material), but with textures, you only have a limited number of pixels to represent individual characteristics of materials. When authoring these textures, what you are actually doing is describing the average characteristic in the area of interest. It is therefore accurate to describe materials such as rust as somewhere between 0 and 1 on average in an area depending on how much oxidation versus metal there is.
+G (Green Channel): Ambient Occlusion/Height
+This allows you to pack either the Ambient Occlusion or the Height map data into one image and re-use it in those inputs to the material, depending on which you prefer to use.
+Alpha: Smoothness
+High Alpha means High Smoothness
+Low Alpha is Low Smoothness
+B(Blue Channel):Nothing
+
+Unity Standard Shader Mapsを使用
+
+AssettoCorsaからPBSMetaricへの変換時の注意点
+diffuseTextureのアルファをDetailTextureの適用マスクとすることがあるが、PBRMetallicではこのDetailMaskMapが存在しない
+代わりにDetailTextureを適用するがマスクは使わない。もしくはDetailTextureそのものを使わないといった手法を取る
+それと、diffuseTextureがAOマップであることがある。この

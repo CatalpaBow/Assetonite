@@ -14,7 +14,7 @@
     "handlers": {
         "consoleHandler": {
             "class": "logging.StreamHandler",
-            "level": "INFO",
+            "level": "DEBUG",
             "formatter": "color",
             "stream": "ext://sys.stdout"
         },
@@ -27,6 +27,7 @@
         "fixFbxHandler": {
             "class": "logging.FileHandler",
             "level": "DEBUG",
+            "delay": true,
             "formatter": "simple",
             "filename": "logs\\fixFbx.log"
         }

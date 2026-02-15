@@ -1,0 +1,296 @@
+Ohh, what a bee hive this is. So many possibilities and close to zero knowledge. I am in the process of changing that.
+
+No wonder with 78 different shaders, 26 of them dissabled.
+
+I am starting this thread, because I need to put this information, into something I can understand and sort out. I am doing the work, so I think that I might as well share it.
+
+If I by sharing this, can ease the journey, for others into this subject, then I will be more happy.
+
+To make this more managable, I am working on 2 lists. This one with the different texturemaps, that each shader can use and the other one, about what purposes the shaders can be used for.
+
+This is very much a work in progress and any help will be very much appreciated.
+
+This first post will be updated, as I gain more knowledge and time allows.
+
+AC shader information is ammongst others available here:
+
+Proper technique in track making + tips
+http://www.assettocorsa.net/forum/i...er-technique-in-track-making-plus-tips.27180/
+
+Track Materials / Shaders
+http://www.assettocorsa.net/forum/index.php?threads/track-materials-shaders.10174/
+
+Car materials / shaders / modelling stuff (Add your knowledge here)
+http://www.assettocorsa.net/forum/i...odelling-stuff-add-your-knowledge-here.19704/
+
+I very much appreciate the work, done in these threads.
+
+Questions about techniques, should be asked in the Track Materials / Shaders and Car materials / shaders threads.
+
+*shaders dissabled in Assetto Corsa Editor/system/cfg/shader_filter_list.txt. Enable by deleting line in txt file.
+
+rc is recommended dds compression.
+
+Example: Note! At the moment NOT! Correct information!
+
+ksMultilayer_fresnel_nm.shader
+txDiffuse Ye basic, no frills, base texture, contains alpha layer rc DXT5
+txDiffuse Ye basic, no frills, base texture, no alpha layer rc DXT5
+txMask bla bla bla rc DXT1
+txDetailR Tobla tobla tobla rc DXT5
+txDetailG Gip gip gip rc DXT4
+txDetailB Gupi gupi gupi rc DXT2
+txDetailA Long explanation Long explanation Long explanation Long explanation Long explanation Long explanation rc DXT1
+txDetailNM Bup bupbup blabber rc DXT3
+Ground shaders (asphalt, tarmac, sand, etc.):
+
+*ksIdealLine.shader
+txDiffuse Ye basic, no frills, base texture
+*ksSkidMark.shader
+txDiffuse
+Object shaders (trees, grass, buildings, poles, fences, etc.)
+
+ksGrass.shader
+txDiffuse
+txVariation
+ksFlags.shader
+txDiffuse
+ksTree.shader
+txDiffuse
+The air shaders:
+
+ksSky.shader
+ksSkyBox.shader
+txClouds
+ksSkyCubemap.shader
+ksClouds.shader
+txDiffuse
+*ksPostFOG.shader
+txDiffuse
+txDepth
+Car shaders:
+
+ksBrakeDisc.shader
+txDiffuse
+txNormal
+txGlow
+txBlur
+txNormalBlur
+ksBrokenGlass.shader
+txDiffuse
+txNormal
+ksCarPaintSimple.shader
+txDiffuse
+ksTyres.shader
+txDiffuse
+txNormal
+txDirty
+txBlur
+txNormalBlur
+ksWindscreen.shader
+txDiffuse
+newStefano_ksTyres.shader
+*ksFakeCarShadows.shader
+txDiffuse
+*ksFakeCarShadowsGen.shader
+*ksCircularRPM.shader
+txDiffuse
+txDiffuseON
+Multiple use shaders:
+
+ksPerPixel.shader
+txDiffuse
+ksPerPixel_dual_layer.shader
+txDiffuse
+txLayer1
+txLayer1_Mask
+ksPerPixel_nosdw.shader
+txDiffuse
+ksPerPixelAlpha.shader
+txDiffuse
+ksPerPixelAT.shader
+txDiffuse
+ksPerPixelAT_NM.shader
+txDiffuse
+txNormal
+ksPerPixelAT_NS.shader
+txDiffuse
+ksPerPixelMultiMap.shader
+txDiffuse
+txNormal
+txMaps
+txDetail
+ksPerPixelMultiMap_AT.shader
+txDiffuse
+txNormal
+txMaps
+txDetail
+ksPerPixelMultiMap_AT_NMDetail.shader
+txDiffuse
+txNormal
+txMaps
+txDetail
+txNormalDetail
+ksPerPixelMultiMap_damage.shader
+txDiffuse
+txNormal
+txMaps
+txDetail
+txDamage
+ksPerPixelMultiMap_damage_dirt.shader
+txDiffuse
+txNormal
+txMaps
+txDetail
+txDamage
+txDust
+txDamageMask
+ksPerPixelMultiMap_NMDetail.shader
+txDiffuse
+txNormal
+txMaps
+txDetail
+txNormalDetail
+ksPerPixelMultiMapSimpleRefl.shader
+txDiffuse
+txNormal
+txMaps
+txDetail
+ksPerPixelNM.shader
+txDiffuse
+txNormal
+ksPerPixelNM_UV2.shader
+txDiffuse
+txNormal
+ksPerPixelNM_UVMult.shader
+txDiffuse
+txNormal
+ksPerPixelReflection.shader
+txDiffuse
+ksPerPixelSimpleRefl.shader
+txDiffuse
+ksMultilayer.shader
+txDiffuse
+txMask
+txDetailR
+txDetailG
+txDetailB
+txDetailA
+ksMultilayer_fresnel_nm.shader
+txDiffuse
+txMask
+txDetailR
+txDetailG
+txDetailB
+txDetailA
+txDetailNM
+ksMultilayer_objsp.shader
+txDiffuse
+txMask
+txDetailR
+txDetailG
+txDetailB
+txDetailA
+I don't know use, yet shaders:
+
+GL.shader
+GL2D.shader
+ksColourShader.shader
+ksMegaShader.shader
+txDiffuse
+ksMSDepthResolve.shader
+txDepth
+ksOrenNayar.shader
+txDiffuse
+ksOculusVR
+Texture
+ksOculusVR2
+Texture
+ksPostFOG_MS.shader
+txDiffuse
+txDepth
+ksShadowGen_debug.shader
+ksSimpleShader.shader
+txDiffuse
+ksSkinnedMesh.shader
+txDiffuse
+txNormal
+txMaps
+txDetail
+ksSkinnedMesh_NMDetaill.shader
+txDiffuse
+txNormal
+txMaps
+txDetail
+txNormalDetail
+ksTest.shader
+ksYebisBlur
+txBlurredDepth
+txFinalDepth
+ksYebisBlur_MS
+txBlurredDepth
+txFinalDepth
+ksYebisPreDof
+txDiffuse
+txDepth
+Dissabled shaders:
+
+*GLTextured.shader
+txDiffuse
+*ksCameraDirt.shader
+txDiffuse
+*ksFont.shader
+txDiffuse
+*ksFXAA Has 6 texture slots, all with the same name: txCurrent
+
+*ksFXAA_0.shader
+*ksFXAA_1.shader
+*ksFXAA_2.shader
+*ksFXAA_3.shader
+*ksFXAA_4.shader
+*ksFXAA_5.shader
+
+*ksHighPass.shader
+txDiffuse
+txDownsampled
+*ksParticle.shader
+txDiffuse
+*ksPostAdaptLum.shader
+txDiffuse
+txNewLuma
+*ksPostBlur.shader
+txDepth
+txSrc
+*ksPostBlur_MS.shader
+txDepth
+txSrc
+*ksPostBlurH.shader
+txDiffuse
+*ksPostBlurRadial.shader
+txDepth
+txSrc
+*ksPostBlurRadialMS.shader
+txDepth
+txSrc
+*ksPostBlurV.shader
+txDiffuse
+*ksPostBW.shader
+txCurrent
+*ksPostCopy.shader
+txDiffuse
+*ksPostCopyLuma.shader
+txDiffuse
+*ksPostToneMap.shader
+txDiffuse
+txBloom
+txDownsampled
+*ksSelectedMesh.shader
+*ksShadowGen.shader
+*ksShadowGenAT.shader
+txDiffuse
+*ksShadowGenSKIN.shader
+
+
+
+
+I hope that someone are going to find this usefull.

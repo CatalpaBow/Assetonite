@@ -1,0 +1,22 @@
+Hey!
+I'm new to track modding in Assetto Corsa and I'm trying to understand the material workflow. I'm using the ksPerPixelMultiMap shader and feel like I have a good grip on all the texture maps except the detail map.
+From the image shared here: https://www.assettocorsa.net/forum/index.php?threads/track-materials-shaders.10174/ the detail map seems like a greyscale texture which I expected would modulate the diffuse color and make it brighter/darker with grey being neutral but when I assign a checkered pattern to the txDetail property of my grey sphere, I see no difference. I set useDetail and detailUVMultiplier to 1.
+Am I missing something?
+
+Hello Jonas!
+
+Firstly, you'll need to use DDS textures, not PNG. DXT1 to 5 or BC1 to 3 compressions
+
+Secondly, I believe to get the detail map to show, the diffuse needs to have a black alpha channel, and saved as DXT5 or BC3. Hope this helps!
+
+As John mentioned, the diffuse alpha controls its blending with the detail texture. Note that the blending is more like setting it to "multiply" in Photoshop; it doesn't make the diffuse invisible (unless the diffuse is white).
+
+The main usage for this in AC is on cars; the main diffuse of a car without a full livery is just an AO texture with an all-black alpha. This causes the AO to "multiply" with the detail texture, and then the detail texture gets used to give the body colour. This setup allows street cars with different colour bodies while only needing to change the small detail texture for each car, instead of the whole diffuse (AO) texture.
+
+The detail does not need to be greyscale, it can be whatever you want. On cars it's often the coloured metal flake or a carbon fiber texture. On tracks it's often an asphalt or concrete or grass texture, for example.
+
+The alpha channel of the detail texture controls specular falloff, IIRC. That's how the metal flake works on the Kunos cars; the alpha of the detail is mostly black (no falloff) with a few white specs (lots of falloff) to simulate a metal flake effect. The MAPS texture controls other reflective properties in different channels. Off the top of my head, but I believe blue is reflection strength, green is reflection blurriness and red is specular strength.
+
+On the main multimap shader the UV of the detail is the same as the main diffuse UV, but you set a multiplier for scaling it. On the multi-channel shader used on tracks for the road and grass and the like, the UV of the detail texture is projected from above; so it is not good for objects with more vertical surfaces.
+
+Hope that helps!

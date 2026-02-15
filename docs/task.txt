@@ -1,0 +1,24 @@
+中断
+Resonite内での車両選択
+自動FBXインポート＆FBXバインディング
+Websocket→OSCへの移行
+エラーハンドリングの改良
+サウンドの追加
+アセットコルサと中継サーバーとレゾナイト
+
+タスク:AssettoCorsaの車両FBXをResoniteに自動インポート
+    FBXデータのマテリアル修正
+        Blinn-Phongシェーディングモデルに基づいたマテリアルパラメーターをPBRに変換
+            車両の
+        PBRマテリアルパラメーターの適用
+        マテリアルシェーダーに応じたテクスチャの適用
+資料
+Resoniteの3DModelインポート:https://wiki.resonite.com/3D_Model_Import
+AssettoCorsa 3DCarModel 制作ガイドライン:docs/AC_Pipeline_PUB_Rev2.0.pdf
+
+
+車両データ構成
+例:GT86(data/input/fbx_fixer/gt86)
+textureフォルダ　テクスチャデータ
+toyota_gt86.fbx　FBXデータ
+toyota_gt86.fbx.ini マテリアル情報

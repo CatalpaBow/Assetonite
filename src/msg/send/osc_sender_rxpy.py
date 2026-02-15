@@ -17,7 +17,6 @@ class OSCSenderRxPy:
             bundle = osc_bundle_builder.OscBundleBuilder(osc_bundle_builder.IMMEDIATELY)
             packet_size = 0
             for content in serialized:
-                
                 #print(f"name:{content.msg} val:{content.value}")
                 msg = osc_message_builder.OscMessageBuilder(address = content.msg)
                 if(isinstance(content.value ,list)):

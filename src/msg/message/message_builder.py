@@ -27,7 +27,7 @@ class MessageBuilder:
         #BuildMessage
         return {
             "Telemetry" : src.get_telemetry(), 
-            "TyreRotation" : tyre_out,
+            "TyreRot" : tyre_out,
             "AnalogInstrument" : instrument_out
         }
     def update_constant(self,constant : ConstantData):

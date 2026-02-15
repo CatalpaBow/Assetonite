@@ -54,7 +54,7 @@ class TyreRotationCalculator:
         # ------------------------
         rots = []
         # 旋回角 前輪のみ回転 前輪へのアッカーマン補正あり
-        tire_yaw_angle = steer_angle * (self.steer_lock/self.steer_ratio)
+        tire_yaw_angle = -steer_angle * (self.steer_lock/self.steer_ratio)
         tire_yaw_angle_rad = np.deg2rad(tire_yaw_angle)
         tire_yaw_q = [
             np.quaternion(1, 0, 0, 0),

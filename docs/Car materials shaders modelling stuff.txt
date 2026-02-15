@@ -1,0 +1,34 @@
+Assetto Corsaのフォーラムから抜粋
+The map texture's green channel controls both reflection and specular sharpness now. I believe that's the only change.
+If you're writing your own shaders, there's another parameter that's important to reflection properties - isAdditive.
+isAdditive = 0 means that the maximum reflection sharpness is only achieved with a specular power of 255. Think of this like a simple material - plastic, rubber, whatever. It's only reflecting at one layer so specular + reflective sharpness are tied together (to get technical, the specular spot is the reflection of the sun - it's just that the sun is so much brighter that it needs special casing).
+isAdditive = 1 is literally true, it sets reflections to additive (instead of the default fresnel mix). I think this is for glass. Same deal, specular power of 255 is sharp reflections.
+isAdditive = 2 means that reflections are almost always sharp - specular power of 8 or higher will do it. It's also back to the original case of fresnel mixing. Think of this as something with a clearcoat - the undercoat of paint can have a metallic specular setting, the clearcoat still has sharp reflections.
+
+
+In regard to the collider, it's not strictly on topic but worth mentioning that the usual rotation is not applied correctly - you must model it with Z forward Y up for it to line up with your model ingame (in Blender this means rotating it 90 degrees around X so the front of the collider points upward). That's why my example picture is pointing up, the rotation so that the front is up shows in the editor but doesn't work ingame.
+
+bump
+
+- ksPerpixelAT uses alpha as ON/OFF, performing an alpha test, a transparency mask, the old "color key". It can be alpha blended but it's a waste of calculations.
+
+- ksPerPixel (and some other shaders) can be alpha blended, it means that the shader performs semi transparencies. An alpha blended object will ALWAYS create a sorting problem with the Z buffer: some pixels are at a certain distance, some pixels (the ones semi trasparent) are at 2 different distances, so the gpu doesn't know where is the exact position of the pixel. An alpha blended object needs to be sorted in the drawing order. The flag TRANSPARENT tells the gpu to draw the object as last in the order. A TRANSPARENT object is excluded from the motion blur (because motion blur needs to know the distance from the camera of an object).
+
+- ksPerPixelAlpha is just a ksPerPixel with the control of the level of transparency, that can be changed by the engine. Obviously if you don't want the engine to have control over the level of transparency, use ksPerPixel, it has less functions to be calculated.
+
+-ksPerPixelAt_NS is a ksPerpixelAT without the rendering of the shadows (No Shadows) on it and a different filtering of the texture. It's an old shader, I think no more used in any of our content...
+
+-ksTree works like ksPerPixelAt_NS but with a better filtering.
+
+The value AlphaRef is only related to shadow generation, not to transparency. There's no way to control alpha test threshold in AC.
+
+Boh is a variable that is useless for graphics but it's used for performance balance. It has to be there... just ignore it.
+
+My suggestion: Use of alpha blending should be very limited: if it can be done with alpha test, use alpha test.
+
+
+
+The interior windows should use ksWindscreen + ksBrokenGlass (separate objects, windscreen is for smudges, dirt, etc.), exterior ksPerPixelReflection.
+
+
+
