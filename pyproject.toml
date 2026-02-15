@@ -50,3 +50,9 @@ dependencies = [
     "typing_extensions==4.14.1",
     "websockets==15.0.1",
 ]
+
+[tool.setuptools.packages.find]
+where = ["paks/fbx"]
+
+[tool.setuptools.package-data]
+myext = ["*.pyd"]

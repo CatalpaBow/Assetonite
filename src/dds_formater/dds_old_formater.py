@@ -84,33 +84,3 @@ def is_r8(path :Path):
     return 'R8_' in format
 
 
-temp_texsutre_fldr_path = r'F:\Games\OtherGames\Assetto Corsa\content\cars\ke_subaru_impreza_wrx_25bat\fbx\texture'
-
-def test():
-    #test_path = '.tools/symbols.dds'
-    #rslt_path = to_old_format(test_path)
-    #print(rslt_path)
-    #is_new_format(path)
-    test_fldr_path = Path(r'D:\Devlop\Assetonite\.tools\test_texstures')
-    dds_file_paths = Path(test_fldr_path).glob('*.dds')
-    new_format_file_paths = list(filter(is_new_format,dds_file_paths))
-    
-    #バックアップを作成
-    backup_path = test_fldr_path / 'backups'
-    if not(backup_path.exists()):
-        backup_path.mkdir()
-    
-    [shutil.copy(file_path,backup_path) for file_path in new_format_file_paths]
-    print('---TargetFiles---')
-    for file_path in new_format_file_paths:
-        print(file_path)
-        to_old_format(file_path)
-
-def main():
-    dds_file_paths = Path(temp_texsutre_fldr_path).glob('*.dds')
-    new_format_file_paths = filter(is_new_format,dds_file_paths)
-    old_format_files = [to_old_format(file) for file in new_format_file_paths]
-
-if __name__ == '__main__':
-    #main()
-    test()

@@ -120,22 +120,3 @@ class DDStoXFormatter:
             raise
 
 
-# ================================
-# 使用例
-# ================================
-if __name__ == "__main__":
-    import logging
-    from src.utils.logger_getter import get_logger
-
-    logger = get_logger('fix_fbx')
-
-    try:
-        converter = DDStoXFormatter()
-        converter.convert(
-            input_dds=r"D:\path\to\dds\texture.dds",
-            output_dds=r"D:\path\to\output\texture.dds",
-            format="DXT1"
-        )
-        print("✓ 変換完了")
-    except Exception as e:
-        print(f"✗ エラー: {e}")

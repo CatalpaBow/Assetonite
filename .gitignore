@@ -1,6 +1,8 @@
 .venv
 __pycache__
-.tools
+.tools/*
+!.tools/*.exe
+!.tools/*.dll
 .pytest_cache
 .vscode
 tempCodeRunnerFile.py

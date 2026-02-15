@@ -2,12 +2,15 @@
 Test cfg_materials functionality
 """
 
-from pathlib import Path
+import os
 import sys
-from configparser import ConfigParser
-import re
 from dataclasses import dataclass
 from typing import Dict
+
+from pathlib import Path
+import re
+
+from configparser import ConfigParser
 
 # Define classes directly to avoid import issues
 @dataclass
@@ -131,7 +134,7 @@ def load_material_info(fbx_folder):
     return dic
 
 # Test with actual GT86 data
-fbx_folder = r"d:\Devlop\Assetonite\data\input\fbx_fixer\gt86"
+fbx_folder = r".\data\input\fbx_fixer\gt86"
 
 print("=" * 70)
 print("Testing cfg_materials.load_all_materials()")
