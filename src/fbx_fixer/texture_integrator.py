@@ -27,6 +27,7 @@ logger = get_logger('fix_fbx')
 
 
 class TextureIntegrator:
+    
     """
     AC テクスチャを Resonite PBR フォーマットに統合変換
     """
@@ -41,6 +42,7 @@ class TextureIntegrator:
         self.output_folder = Path(output_folder)
         self.output_folder.mkdir(parents=True, exist_ok=True)
         self.dds_converter = DDStoXFormatter()
+        self.output_tex_dic:dict[str,str]
         logger.info(f"TextureIntegrator initialized: output={output_folder}")
     
     def convert_all_textures(

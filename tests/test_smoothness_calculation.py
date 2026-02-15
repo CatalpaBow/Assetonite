@@ -7,11 +7,11 @@ texture_integrator と pbr_converter の Smoothness 計算をテストします�
 import pytest
 from pathlib import Path
 import sys
-
 src = Path(__file__).parent.parent / 'src'
 sys.path.append(str(src))
 
-from fbx_fixer.pbr_converter import (
+
+from src.fbx_fixer.pbr_converter import (
     BlinnPhongToPBRConverter,
     BlinnPhongParams,
     PBRParams

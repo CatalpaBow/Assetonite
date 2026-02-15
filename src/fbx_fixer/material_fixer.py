@@ -294,6 +294,166 @@ def main_process(manager :FbxManager,scene :FbxScene,main_fldr_path :Path,mat_in
     
     return process_success
 
+def pbr_texture_convert_process(fbx_fldr_path:Path):
+    # === PBR テクスチャ変換・適用処理 ===
+    logger.info(Fore.YELLOW + 'Start PBR conversion and application...')
+    pbr_error_count = 0
+    try:
+        # テクスチャ変換フォルダを設定
+        pbr_texture_folder = fbx_fldr_path / 'pbr_textures'
+        pbr_texture_folder.mkdir(exist_ok=True)
+        
+        # マテリアル詳細情報を読み込み
+        all_materials = load_all_materials(fbx_fldr_path)
+        
+        # テクスチャインテグレータを初期化
+        integrator = TextureIntegrator(pbr_texture_folder)
+        
+        # PBRコンバータを初期化
+        converter = BlinnPhongToPBRConverter()
+        
+        # 各マテリアルを処理
+        pbr_results = {}
+        for mat_name, mat_info in all_materials.items():
+            logger.debug(f"Processing material for PBR: {mat_name}")
+            
+            # PBRパラメータを計算
+            bp_params = create_pbr_params_from_ini_dict({
+                'SHADER': mat_info.shader,
+                'ksDiffuse': mat_info.ks_diffuse,
+                'ksSpecular': mat_info.ks_specular,
+                'ksSpecularEXP': mat_info.ks_specular_exp,
+                'ksEmissive': mat_info.ks_emissive,
+                'ksAmbient': mat_info.ks_ambient,
+                'ksAlphaRef': mat_info.ks_alpha_ref,
+                'ALPHABLEND': 1 if mat_info.alpha_blend else 0,
+                'ALPHATEST': 1 if mat_info.alpha_test else 0,
+            })
+            pbr_params = converter.convert(bp_params)
+            
+            # テクスチャを変換
+            texture_paths = integrator.convert_all_textures(
+                mat_info,
+                pbr_params,
+                mat_name
+            )
+        
+        # 結果サマリー
+        success_count = sum(1 for v in pbr_results.values() if v)
+        pbr_error_count = len(pbr_results) - success_count
+        
+        if pbr_error_count > 0:
+            process_success = False
+            logger.warning(
+                f'[WARNING] PBR applied to {success_count}/{len(pbr_results)} materials ({pbr_error_count} errors)'
+            )
+        else:
+            logger.info(
+                f'[SUCCESS] PBR applied to {success_count}/{len(pbr_results)} materials'
+            )
+        
+    except Exception as e:
+        process_success = False
+        pbr_error_count += 1
+        logger.error(f'Error during PBR conversion: {e}')
+        logger.debug(traceback.format_exc())
+    
+    if process_success:
+        logger.info('[SUCCESS] Success to main fix process')
+    else:
+        logger.error('[FAILED] Some steps did not complete successfully')
+        logger.warning(f'  - Texture conversion errors: {len(new_texture_failed_list)}')
+        logger.warning(f'  - PBR application errors: {pbr_error_count}')
+    
+    return process_success
+
+def main_process_new(manager :FbxManager,scene :FbxScene,main_fldr_path :Path,mat_info :dict[str,bool]) -> bool:
+    """
+    メイン処理
+    
+    Returns:
+        bool: 処理が成功したか（全てのステップが成功）
+    """
+    logger.info(Fore.YELLOW + 'Start main fix process')
+    process_success = True  # 全体の成功フラグ
+    
+    #Node→Material→property(diffuse)→Texsture
+    #新規テクスチャのフォルダーを作成
+    new_texture_fldr = main_fldr_path / 'new_texture'
+    new_texture_fldr.mkdir(exist_ok=True)
+
+    # === PBR テクスチャ変換・適用処理 ===
+    logger.info(Fore.YELLOW + 'Start PBR conversion and application...')
+    pbr_error_count = 0
+    try:
+        # テクスチャ変換フォルダを設定
+        pbr_texture_folder = main_fldr_path / 'pbr_textures'
+        pbr_texture_folder.mkdir(exist_ok=True)
+        
+        # マテリアル詳細情報を読み込み
+        all_materials = load_all_materials(main_fldr_path)
+        
+        # テクスチャインテグレータを初期化
+        integrator = TextureIntegrator(pbr_texture_folder)
+        
+        # PBRコンバータを初期化
+        converter = BlinnPhongToPBRConverter()
+        
+        # 各マテリアルを処理
+        pbr_results = {}
+        for mat_name, mat_info in all_materials.items():
+            logger.debug(f"Processing material for PBR: {mat_name}")
+            
+            # PBRパラメータを計算
+            bp_params = create_pbr_params_from_ini_dict({
+                'SHADER': mat_info.shader,
+                'ksDiffuse': mat_info.ks_diffuse,
+                'ksSpecular': mat_info.ks_specular,
+                'ksSpecularEXP': mat_info.ks_specular_exp,
+                'ksEmissive': mat_info.ks_emissive,
+                'ksAmbient': mat_info.ks_ambient,
+                'ksAlphaRef': mat_info.ks_alpha_ref,
+                'ALPHABLEND': 1 if mat_info.alpha_blend else 0,
+                'ALPHATEST': 1 if mat_info.alpha_test else 0,
+            })
+            pbr_params = converter.convert(bp_params)
+            
+            # テクスチャを変換
+            texture_paths = integrator.convert_all_textures(
+                mat_info,
+                pbr_params,
+                mat_name
+            )
+        
+        # 結果サマリー
+        success_count = sum(1 for v in pbr_results.values() if v)
+        pbr_error_count = len(pbr_results) - success_count
+        
+        if pbr_error_count > 0:
+            process_success = False
+            logger.warning(
+                f'[WARNING] PBR applied to {success_count}/{len(pbr_results)} materials ({pbr_error_count} errors)'
+            )
+        else:
+            logger.info(
+                f'[SUCCESS] PBR applied to {success_count}/{len(pbr_results)} materials'
+            )
+        
+    except Exception as e:
+        process_success = False
+        pbr_error_count += 1
+        logger.error(f'Error during PBR conversion: {e}')
+        logger.debug(traceback.format_exc())
+    
+    if process_success:
+        logger.info('[SUCCESS] Success to main fix process')
+    else:
+        logger.error('[FAILED] Some steps did not complete successfully')
+        logger.warning(f'  - Texture conversion errors: {len(new_texture_failed_list)}')
+        logger.warning(f'  - PBR application errors: {pbr_error_count}')
+    
+    return process_success
+
 def run_material_fix(fldr_path:Path) -> int:
     """
     マテリアル修正パイプラインを実行
