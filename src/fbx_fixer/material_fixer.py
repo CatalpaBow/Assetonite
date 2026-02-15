@@ -125,7 +125,7 @@ def create_convert_to_non_alpha() -> str:
                 in_map = 'r'
                 out_map = 'in0.rrr'
             
-            TexConv(r"..\.tools\ezTexConv.exe")\
+            TexConv(r".\.tools\ezTexConv.exe")\
                 .add_input(0, input_texture_path)\
                 .set_output(str(out_file_path))\
                 .set_channel_map(in_map, out_map)\
